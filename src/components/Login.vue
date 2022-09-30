@@ -16,13 +16,7 @@
         id="authDropdown"
       >
         <div v-if="account.picture || user.picture">
-          <img
-            :src="account.picture || user.picture"
-            alt="account photo"
-            height="40"
-            class="rounded"
-          />
-          <span class="mx-3 text-success lighten-30">{{ account.name || user.name }}</span>
+          <span class="mx-3 text-success lighten-30">Edit Account / Logout </span>
         </div>
       </div>
       <div class="dropdown-menu p-0 list-group w-100" aria-labelledby="authDropdown">

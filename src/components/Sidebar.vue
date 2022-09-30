@@ -1,35 +1,46 @@
 <template>
-  <div class="sidebar elevation-5 col-3 bg-dark">
-      
-      <div class="d-flex">
+  <div class="sidebar elevation-5 col-3 bg-dark text-center sticky-top">
+      <!-- <div class="d-flex">
       <input type="text" class="form-control" required="true" minlength="2" placeholder="Search" name="search">
-      <label for="search" class="visually-hidden">Search</label>  <button type="submit" class="btn btn-dark "><i class="mdi mdi-magnify fs-5"></i></button></div>
-      <br><br><br><br>
- <router-link class="navbar-brand d-flex" :to="{ name: 'Profile' }">
+      <label for="search" class="visually-hidden">Search</label>  <button type="submit" class="btn btn-dark "><i class="mdi mdi-magnify fs-5"></i></button></div> -->
+      <search-form />
+      <br>
+      <div>
+        <button @click="changePage(previousPage)" :disabled="!previousPage" class="btn btn-danger me-2"
+        :class="{'disabled' : !previousPage}">Previous</button>
+        <button @click="changePage(nextPage)" :disabled="!nextPage"
+        :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">Next</button>
+
+      </div><br><br>
+ <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Profile' }">
       <div class="d-flex flex-column align-items-center">
-        <img class="card-img-top rounded" alt="Title" :src="account.picture || user.picture">
+        <img :src="account.picture" alt="" height="120" class="rounded">
         </div>
     </router-link>
       
       <div class="pt-4 fs-9"> <span v-if="!user.graduated">
           <i class="mdi mdi-account-school-outline fs-5"> Fall 2022</i> 
         </span></div>
- <router-link class="navbar-brand d-flex" :to="{ name: 'Profile' }">
+ <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Profile' }">
       <div class="d-flex flex-column align-items-center">
-        <h4>{{user.name}}</h4>
+        <h4>{{account.name}}</h4>
         </div>
     </router-link>
     
-
-
-        <a v-if="!user.github" :href="user.github" target="_blank">
+<div class="mb-2">
+        <a v-if="account.github" :href="account.github" target="_blank">
           <i class="mdi mdi-deviantart selectable"></i>
-        </a> Github<br>
-
-                <a v-if="user.github" :href="user.github" target="_blank">
+        </a> Github<br></div>
+        <div class="mb-2">
+                <a v-if="account.linkedin" :href="account.linkedin" target="_blank">
           <i class="mdi mdi-deviantart selectable"></i>
-        </a>Link<br>
-
+        </a> LinkedIn<br></div>
+        <div class="mb-2">
+        <a v-if="account.resume" :href="account.resume" target="_blank">
+          <i class="mdi mdi-deviantart selectable"></i>
+        </a> Resume<br></div>
+<br>
+<login/>
 
     </div>
 
@@ -39,18 +50,31 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from '../AppState'
+import { postsService } from "../services/PostsService.js"
+import Pop from "../utils/Pop.js"
+import SearchForm from './SearchForm.vue'
 
 export default {
-  setup() {
-    return {
-      user: computed(() => AppState.user),
-      account: computed(() => AppState.account),
-    }
-  }
+    setup() {
+        return {
+          user: computed(() => AppState.user),
+          account: computed(() => AppState.account),
+          nextPage: computed(() => AppState.nextPage),
+          previousPage: computed(() => AppState.previousPage),
+
+        async changePage(pageUrl) {
+        try {
+        await postsService.getPosts(pageUrl)
+        } catch (error) {
+        Pop.error(error.message)
+        }
+        },
+        };
+    },
+    components: { SearchForm }
 }
 </script>
 
 
 <style lang="scss" scoped>
-
 </style>

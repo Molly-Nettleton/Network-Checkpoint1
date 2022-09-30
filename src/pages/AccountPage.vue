@@ -1,8 +1,15 @@
 <template>
   <div class="about text-center">
-    <h1>Welcome {{ account.name }}</h1>
-    <img class="rounded" :src="account.picture" alt="" />
-    <p>{{ account.email }}</p>
+    <div class="bio elevation-5">
+    <ProfileDetail :profile="account" />
+</div>
+    <div class="container">
+      <div class="row my-3">
+        <div class="col-6 m-auto">
+          <AccountForm class="elevation-2" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,7 +26,7 @@ export default {
 </script>
 
 <style scoped>
-img {
-  max-width: 100px;
-}
+  .bio{
+    overflow:auto
+  }
 </style>

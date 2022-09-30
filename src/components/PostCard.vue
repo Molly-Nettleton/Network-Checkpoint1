@@ -1,6 +1,5 @@
 <template>
   <div class="component">
-    
 <div class="card text-start mb-3 d-flex elevation-5">
         <div class="d-flex ps-4 pt-4">
         <img class="card-img-top rounded" :src="post.creator.picture" alt="Title"><p class="p-2">{{post.creator.name}}</p><div> 

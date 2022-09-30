@@ -1,6 +1,5 @@
 <template>
 <div class="col-md-12">
-    
     <CreatePost />
 
     <div class="" v-for="p in posts">

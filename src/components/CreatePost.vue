@@ -6,7 +6,7 @@
   <div class="card text-start mb-3 d-flex elevation-5">
 
   <div class="d-flex ps-4 pt-2">
-        <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title">
+        <!-- <User/> -->
       </div>
 
 <div class="card-body">
@@ -19,12 +19,12 @@
 
         <div class="card-footer d-flex justify-content-between"> 
           <div class="d-flex">
-          <div class="p-2">Img Url:</div>
-          <input type="url" name="imgurl" v-model="banana.imgUrl">
+          <div class="p-2"><strong>Img Url:</strong></div>
+          <input type="url" name="imgurl" v-model="banana.imgUrl" class="rounded">
           </div>
 
-      <div class="my-3">
-      <button class="btn btn-success" type="submit">SEND IT</button>
+      <div>
+      <button class="btn btn-success" type="submit">Make Post</button>
     </div>
 
         </div>

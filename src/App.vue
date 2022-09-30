@@ -24,11 +24,12 @@
   
     
     </div> -->
-
+<br><br>
 
     <div class="post-content col-7">
       <Navbar />
       <!-- <h1 class="text-center mt-3 mb-5">Social Media Site</h1> -->
+
 <router-view />
 <br><br><br><br> 
 
@@ -93,6 +94,7 @@ import Navbar from './components/Navbar.vue'
 import LadCard from "./components/LadCard.vue"
 import { ladsService } from "./services/LadsService.js"
 import Sidebar from "./components/Sidebar.vue"
+import { postsService } from "./services/PostsService.js"
 
 export default {
   setup() {
@@ -113,6 +115,8 @@ async function getLads(){
     return {
       appState: computed(() => AppState),
       lads: computed(() => AppState.lads),
+
+      
     }
   },
   components: { Navbar, LadCard, Sidebar }

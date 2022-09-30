@@ -3,10 +3,10 @@
     <!-- <Navbar /> -->
   </header>
   <main>
-    <router-view />
+  
     <div class="container-fluid">
   <div class="row">
-    <div class="sidebar col-3 bg-dark rounded">
+    <div class="sidebar elevation-5 col-3 bg-dark rounded">
       
       <div class="d-flex">
       <input type="text" class="form-control" required="true" minlength="2" placeholder="Search" name="search">
@@ -28,14 +28,14 @@
 
 
     <div class="post-content col-7">
-      <h1 class="text-center mt-3">Social Media Site</h1>
-
+      <h1 class="text-center mt-3 mb-5">Social Media Site</h1>
+ <router-view />
  <br><br><br><br> 
 
  <!-- CREATE POST START -->
- <div>
+ <!-- <div>
  <h5>Create Post</h5>
-<div class="card text-start mb-3 d-flex ">
+<div class="card text-start mb-3 d-flex elevation-5">
   <div class="d-flex ps-4 pt-3">
         <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title">
       </div>
@@ -55,7 +55,7 @@
 
         </div>
       </div>
-</div>
+</div> -->
 <!-- CREATE POST END  -->
 <br><br>
 
@@ -75,7 +75,8 @@
 
 
     <div class="rightside col-2">
-      <div v-for="l in lads">
+      <div class="text-center hello mb-3">Sponsored by:</div>
+      <div class="" v-for="l in lads">
       <lad-card :lad="l"/></div>
     </div>
   </div>
@@ -125,6 +126,7 @@ async function getLads(){
   padding-top: 1rem;
   padding-left: 5rem;
   padding-right: 5rem;
+  
 }
 
 .post-content{

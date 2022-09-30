@@ -10,7 +10,7 @@
       
       <div class="d-flex">
       <input type="text" class="form-control" required="true" minlength="2" placeholder="Search" name="search">
-      <label for="search" class="visually-hidden">Search</label>  <button type="submit" class="btn btn-dark "><i class="mdi mdi-magnify"></i></button></div>
+      <label for="search" class="visually-hidden">Search</label>  <button type="submit" class="btn btn-dark "><i class="mdi mdi-magnify fs-5"></i></button></div>
 
 
     <br><br><br><br>
@@ -28,16 +28,21 @@
 
 
     <div class="post-content col-7">
+      <h1 class="text-center mt-3">Social Media Site</h1>
 
+ <br><br><br><br> 
 
+ <!-- CREATE POST START -->
+ <div>
+ <h5>Create Post</h5>
 <div class="card text-start mb-3 d-flex ">
-  <div class="d-flex ps-4 pt-4">
-        <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title"><p>hiii</p>
+  <div class="d-flex ps-4 pt-3">
+        <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title">
       </div>
         <div class="card-body">
       <form @submit="handleSubmit">
   <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Example textarea</textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Example text area</textarea>
   </div>
 </form>
         </div>
@@ -46,28 +51,32 @@
           <div>Img Url</div>
           <input type="text" name="url">
           </form>
-          <button type="submit" class="btn btn-dark text-success fs-10">Submit</button>
+          <button type="submit" class="btn btn-dark text-success fs-10">Post</button>
 
         </div>
       </div>
-
-
+</div>
+<!-- CREATE POST END  -->
 <br><br>
-      <div class="card text-start mb-3 d-flex ">
-        <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title">
+
+<!-- POST CARD START -->
+      <!-- <div class="card text-start mb-3 d-flex ">
+        <div class="d-flex ps-4 pt-4">
+        <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title"><p class="p-2">Name</p><div> <i class="mdi mdi-account-school-outline fs-5"></i> </div>
+      </div>
         <div class="card-body">
-          <h4 class="card-title">Title</h4>
           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo modi quas velit esse placeat optio ea asperiores, aliquid vero ratione perferendis odio facilis et repudiandae sit laboriosam dignissimos officiis.</p>
         </div>
-        <div class="card-footer text-end"><i class="mdi mdi-heart fs-2"></i></div>
-      </div>
+        <div class="card-footer d-flex justify-content-between"><span class="hello pt-2">posted @</span><i class="mdi mdi-heart fs-4"></i></div>
+      </div> -->
+<!-- POST CARD END -->
+
     </div>
 
 
     <div class="rightside col-2">
-      <img src="https://thiscatdoesnotexist.com/" alt="" class="img-fluid pb-2">
-      <img src="https://thiscatdoesnotexist.com/" alt="" class="img-fluid pb-2">
-      <img src="https://thiscatdoesnotexist.com/" alt="" class="img-fluid pb-2">
+      <div v-for="l in lads">
+      <lad-card :lad="l"/></div>
     </div>
   </div>
 </div>
@@ -77,17 +86,34 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
+import LadCard from "./components/LadCard.vue"
+import { ladsService } from "./services/LadsService.js"
 
 export default {
   setup() {
+async function getLads(){
+        try { 
+          await ladsService.getLads()
+        }
+        catch (error) {
+          console.error(error)
+        Pop.error(error)
+        }
+      }
+
+    onMounted(() => {
+  getLads()
+})
+
     return {
-      appState: computed(() => AppState)
+      appState: computed(() => AppState),
+      lads: computed(() => AppState.lads),
     }
   },
-  components: { Navbar }
+  components: { Navbar, LadCard }
 }
 </script>
 <style lang="scss">
@@ -102,18 +128,23 @@ export default {
 }
 
 .post-content{
-  padding-top: 6rem;
+  // padding-top: 6rem;
   padding-left: 6rem;
   padding-right: 6rem;
 }
 
 .rightside{
   padding-top: 6rem;
+  padding-right: 3rem;
 }
 
 .card-img-top{
 height: 50px;
 width: 50px
+}
+
+.hello{
+  font-size: small
 }
 
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 rounded mb-3 mt-2">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <h1>OH HECK</h1>
+      <div class="text-center">
+        <h1>Social Media Site</h1>
       </div>
     </router-link>
     <button
@@ -25,7 +25,7 @@
         </li> -->
       </ul>
       <!-- LOGIN COMPONENT HERE -->
-      <Login />
+      <!-- <Login /> -->
     </div>
   </nav>
 </template>

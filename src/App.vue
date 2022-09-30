@@ -6,15 +6,14 @@
   
     <div class="container-fluid">
   <div class="row">
-    <div class="sidebar elevation-5 col-3 bg-dark rounded">
+    <Sidebar />
+    <!-- <div class="sidebar elevation-5 col-3 bg-dark rounded">
       
       <div class="d-flex">
       <input type="text" class="form-control" required="true" minlength="2" placeholder="Search" name="search">
       <label for="search" class="visually-hidden">Search</label>  <button type="submit" class="btn btn-dark "><i class="mdi mdi-magnify fs-5"></i></button></div>
 
-
     <br><br><br><br>
-
 
       <img src="https://thiscatdoesnotexist.com/" alt="" class="img-fluid rounded">
       <div class="pt-4 fs-9">Class Year</div>
@@ -24,16 +23,17 @@
       <i class="mdi mdi-cat fs-2"></i> hihihihii
   
     
-    </div>
+    </div> -->
 
 
     <div class="post-content col-7">
-      <h1 class="text-center mt-3 mb-5">Social Media Site</h1>
- <router-view />
- <br><br><br><br> 
+      <Navbar />
+      <!-- <h1 class="text-center mt-3 mb-5">Social Media Site</h1> -->
+<router-view />
+<br><br><br><br> 
 
- <!-- CREATE POST START -->
- <!-- <div>
+<!-- CREATE POST START -->
+<!-- <div>
  <h5>Create Post</h5>
 <div class="card text-start mb-3 d-flex elevation-5">
   <div class="d-flex ps-4 pt-3">
@@ -92,6 +92,7 @@ import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import LadCard from "./components/LadCard.vue"
 import { ladsService } from "./services/LadsService.js"
+import Sidebar from "./components/Sidebar.vue"
 
 export default {
   setup() {
@@ -103,7 +104,7 @@ async function getLads(){
           console.error(error)
         Pop.error(error)
         }
-      }
+}
 
     onMounted(() => {
   getLads()
@@ -114,7 +115,7 @@ async function getLads(){
       lads: computed(() => AppState.lads),
     }
   },
-  components: { Navbar, LadCard }
+  components: { Navbar, LadCard, Sidebar }
 }
 </script>
 <style lang="scss">
@@ -122,7 +123,7 @@ async function getLads(){
 
 
 .sidebar{
-  height:36rem;
+  height: 60rem;
   padding-top: 1rem;
   padding-left: 5rem;
   padding-right: 5rem;
@@ -136,7 +137,7 @@ async function getLads(){
 }
 
 .rightside{
-  padding-top: 6rem;
+  padding-top: 3rem;
   padding-right: 3rem;
 }
 

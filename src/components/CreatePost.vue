@@ -1,39 +1,67 @@
 <template>
-  <div class="component">
+<form @submit.prevent="handleSubmit">
 <div>
- <h5>Create Post</h5>
-<div class="card text-start mb-3 d-flex elevation-5">
+  
+<h5>Create Post</h5>
+  <div class="card text-start mb-3 d-flex elevation-5">
+
   <div class="d-flex ps-4 pt-2">
         <img class="card-img-top rounded" src="https://thiscatdoesnotexist.com/" alt="Title">
       </div>
-        <div class="card-body">
-      <form @submit="handleSubmit">
+
+<div class="card-body">
   <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Example text area</textarea>
+    <textarea class="form-control" placeholder="Post content here!" name="postcontent"
+          v-model="banana.body"></textarea>
   </div>
-</form>
         </div>
+
+
         <div class="card-footer d-flex justify-content-between"> 
-          <form>
-          <div>Img Url</div>
-          <input type="text" name="url">
-          </form>
-          <button type="submit" class="btn btn-dark text-success fs-10">Post</button>
+          <div class="d-flex">
+          <div class="p-2">Img Url:</div>
+          <input type="url" name="imgurl" v-model="banana.imgUrl">
+          </div>
+
+      <div class="my-3">
+      <button class="btn btn-success" type="submit">SEND IT</button>
+    </div>
 
         </div>
-      </div>
+  </div>
 </div>
 
-  </div>
+  </form>
 </template>
 
 
 <script>
-export default {
+import { ref } from "vue";
+import { postsService } from "../services/PostsService.js";
+import Pop from "../utils/Pop.js";
 
-  setup(){
-    return {}
-  }
+export default {
+  setup() {
+    const banana = ref({
+  post:{}
+  })
+    return {
+      banana,
+      async handleSubmit() {
+        try {
+          const formData = banana.value
+          await postsService.createPost(formData)
+          banana.value = {
+            post: {}
+          }
+        }
+        catch (error) {
+        Pop.error(error, '[Submitting Form]')
+        }
+      }
+    }
+    
+}
 }
 </script>
 

@@ -2,7 +2,12 @@
   <div class="component">
 <div class="card text-start mb-3 d-flex elevation-5">
         <div class="d-flex ps-4 pt-4">
-        <img class="card-img-top rounded" :src="post.creator.picture" alt="Title"><p class="p-2">{{post.creator.name}}</p><div> 
+
+        <User :creator="post.creator"/>
+        <p class="p-2">{{post.creator.name}}</p>
+        
+        <div> 
+          
           <span v-if="post.creator.graduated">
           <i class="mdi mdi-account-school-outline fs-5"></i> 
         </span>
@@ -23,19 +28,22 @@
 
 
 <script>
+import { computed } from "@vue/reactivity";
+import { AppState } from "../AppState.js";
+import { Account } from "../models/Account.js";
 import { Post } from "../models/Post.js";
-
 
 export default {
   props: {
     post: {
-      type: Post,
-      required: true
-    }
+      type: Post, required: true},
+      // account: {type: Account, required: true}
   },
 
   setup(){
-    return {}
+    return {
+    user: computed(() => AppState.account),
+    }
   }
 }
 </script>

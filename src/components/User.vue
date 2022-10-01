@@ -1,9 +1,8 @@
 <template>
-  <div class="component">
     <router-link :to="{name: 'Profile', params: {id: creator.id}}">
       <img :src="creator.picture" :alt="creator.name" :title="creator.name">
     </router-link>
-  </div>
+
 </template>
 
 
@@ -17,7 +16,7 @@ export default {
       required: true
     }
   },
-  setup() {
+  setup(props) {
     return {}
   }
 }

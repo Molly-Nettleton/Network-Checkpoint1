@@ -94,7 +94,7 @@ import Navbar from './components/Navbar.vue'
 import LadCard from "./components/LadCard.vue"
 import { ladsService } from "./services/LadsService.js"
 import Sidebar from "./components/Sidebar.vue"
-import { postsService } from "./services/PostsService.js"
+
 
 export default {
   setup() {
@@ -115,8 +115,7 @@ async function getLads(){
     return {
       appState: computed(() => AppState),
       lads: computed(() => AppState.lads),
-
-      
+      account: computed(() => AppState.account)
     }
   },
   components: { Navbar, LadCard, Sidebar }
@@ -136,8 +135,8 @@ async function getLads(){
 
 .post-content{
   // padding-top: 6rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .rightside{

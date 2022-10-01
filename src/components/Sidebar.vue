@@ -7,12 +7,14 @@
       <br>
       <div>
         <button @click="changePage(previousPage)" :disabled="!previousPage" class="btn btn-danger me-2"
-        :class="{'disabled' : !previousPage}">Previous</button>
+        :class="{'disabled' : !previousPage}">Old</button>
+
         <button @click="changePage(nextPage)" :disabled="!nextPage"
-        :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">Next</button>
+        :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">New</button>
+        
 
       </div><br><br>
- <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Profile' }">
+ <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Account', }">
       <div class="d-flex flex-column align-items-center">
         <img :src="account.picture" alt="" height="120" class="rounded">
         </div>
@@ -21,7 +23,7 @@
       <div class="pt-4 fs-9"> <span v-if="!user.graduated">
           <i class="mdi mdi-account-school-outline fs-5"> Fall 2022</i> 
         </span></div>
- <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Profile' }">
+ <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Account' }">
       <div class="d-flex flex-column align-items-center">
         <h4>{{account.name}}</h4>
         </div>

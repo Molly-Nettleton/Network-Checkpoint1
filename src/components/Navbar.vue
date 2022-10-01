@@ -1,10 +1,14 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 rounded mb-3 mt-2">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+<div class="text-center bg-dark px-3 rounded mb-3 mt-2 p-2"> <router-link class="navbar-brand" :to="{ name: 'Home' }">
       <div class="text-center">
         <h1>Social Media Site</h1>
       </div>
-    </router-link>
+    </router-link></div>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 rounded mb-3 mt-2">
+
+    
     <button
       class="navbar-toggler"
       type="button"
@@ -18,16 +22,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <!-- <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
-            About
-          </router-link>
-        </li> -->
+        
       </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <!-- <Login /> -->
+     
     </div>
-  </nav>
+  </nav> -->
 </template>
 
 <script>

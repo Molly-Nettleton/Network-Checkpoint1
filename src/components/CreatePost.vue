@@ -6,23 +6,23 @@
   <div class="card text-start mb-3 d-flex elevation-5">
 
   <div class="d-flex ps-4 pt-2">
-        <!-- <User/> -->
+    <!-- NOTE  -->
+        <div>
+          <img :src="user.picture" alt="">
+        </div>
       </div>
 
 <div class="card-body">
   <div class="form-group">
     <textarea class="form-control" placeholder="Post content here!" name="postcontent"
-          v-model="banana.body"></textarea>
-  </div>
+          v-model="editable.body"></textarea>
+    </div>
         </div>
-
-
         <div class="card-footer d-flex justify-content-between"> 
           <div class="d-flex">
           <div class="p-2"><strong>Img Url:</strong></div>
-          <input type="url" name="imgurl" v-model="banana.imgUrl" class="rounded">
+          <input type="url" name="imgurl" v-model="editable.imgUrl" class="rounded">
           </div>
-
       <div>
       <button class="btn btn-success" type="submit">Make Post</button>
     </div>
@@ -36,17 +36,25 @@
 
 
 <script>
+import { computed } from "@vue/reactivity";
 import { ref } from "vue";
+import { AppState } from "../AppState.js";
+import { Account } from "../models/Account.js";
 import { postsService } from "../services/PostsService.js";
 import Pop from "../utils/Pop.js";
 
 export default {
-  setup() {
-    const banana = ref({
-  post:{}
-  })
+
+  setup(props) {
+   
+      // NOTE
+ const editable= ref({})
+  
     return {
-      banana,
+      // NOTE
+      editable,
+      user: computed(() => AppState.account),
+    
       async handleSubmit() {
         try {
           const formData = banana.value

@@ -1,9 +1,9 @@
 <template>
 <div class="col-md-12">
-    <CreatePost />
+    <CreatePost  />
 
-    <div class="" v-for="p in posts">
-        <PostCard :post="p"/></div>
+    <div class="" v-for="p in posts" :key="p">
+        <PostCard :post="p" :account="p.creator"/></div>
         </div>
 </template>
 

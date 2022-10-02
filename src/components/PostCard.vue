@@ -5,13 +5,17 @@
 
         <User :creator="post.creator"/>
         <p class="p-2">{{post.creator.name}}</p>
-        
         <div> 
           
           <span v-if="post.creator.graduated">
           <i class="mdi mdi-account-school-outline fs-5"></i> 
         </span>
         </div>
+
+        <button @click="deletePost(post.id)"
+        :class="`btn btn-light`" v-if="account.id == post.creatorId">Delete</button>
+
+        
       </div>
         <div class="card-body">
             <div class="d-flex justify-content-center">
@@ -20,7 +24,13 @@
             </span> </div>
           <p class="card-text pt-3">{{post.body}}</p>
         </div>
-        <div class="card-footer d-flex justify-content-between"><span class="hello pt-2">{{post.createdAt}}</span><span>{{post.likes.length}}<i class="mdi mdi-heart fs-4"></i></span></div>
+        
+        <div class="card-footer d-flex justify-content-between"><span class="hello pt-2">{{post.createdAt}}</span>
+          <span>{{post.likes.length}}
+            <button class="btn selectable" :disabled="!user.isAuthenticated">
+            <i class="mdi mdi-heart fs-4" @click="likePost()"></i>
+            </button>
+          </span></div>
       </div>
 
   </div>
@@ -32,6 +42,8 @@ import { computed } from "@vue/reactivity";
 import { AppState } from "../AppState.js";
 import { Account } from "../models/Account.js";
 import { Post } from "../models/Post.js";
+import { postsService } from "../services/PostsService.js";
+import Pop from "../utils/Pop.js";
 
 export default {
   props: {
@@ -40,9 +52,34 @@ export default {
       // account: {type: Account, required: true}
   },
 
-  setup(){
+  setup(props){
     return {
-    user: computed(() => AppState.account),
+      user: computed(() => AppState.user),
+      account: computed(() => AppState.account),
+      posts: computed(()=> AppState.posts),
+    
+      async deletePost(id) {
+        try {
+          const confirm = await Pop.confirm("Send this post to the nether?");
+          if (!confirm) {
+            return;
+          }
+          await postsService.deletePost(id)
+          document.documentElement.scrollTop = 0
+        } catch (error) {
+          console.error('[DeletePost]',error)
+          Pop.error(error)
+        }
+      },
+
+      async likePost() {
+        try {
+            await postsService.likePost(props.post.id)
+          } catch (error) {
+            console.error('[LikePost]',error)
+            Pop.error(error)
+          }
+      }
     }
   }
 }

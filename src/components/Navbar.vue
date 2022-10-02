@@ -1,7 +1,7 @@
 <template>
 <div class="text-center bg-dark px-3 rounded mb-3 mt-2 p-2"> <router-link class="navbar-brand" :to="{ name: 'Home' }">
       <div class="text-center">
-        <h1>Social Media Site</h1>
+        <h1>SpellBook</h1>
       </div>
     </router-link></div>
 

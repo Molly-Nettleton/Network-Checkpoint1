@@ -1,11 +1,11 @@
 <template>
   <div class="about text-center">
-    <div class="bio elevation-5">
+    <div class="bio ">
     <ProfileDetail :profile="account" />
 </div>
     <div class="container">
       <div class="row my-3">
-        <div class="col-6 m-auto">
+        <div class="col m-auto">
           <AccountForm class="elevation-2" />
         </div>
       </div>

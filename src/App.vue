@@ -128,8 +128,8 @@ async function getLads(){
 .sidebar{
   height: 60rem;
   padding-top: 1rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   
 }
 
@@ -152,5 +152,11 @@ width: 50px
 .hello{
   font-size: small
 }
+
+// main {
+//   background-image: url(https://images.unsplash.com/photo-1610209455607-89e8b3e0e393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+//   background-size:cover;
+//   background-repeat: no-repeat;
+// }
 
 </style>

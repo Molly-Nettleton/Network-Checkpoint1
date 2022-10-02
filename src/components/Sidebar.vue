@@ -1,16 +1,16 @@
 <template>
-  <div class="sidebar elevation-5 col-3 bg-dark text-center sticky-top">
+  <div class="sidebar elevation-5 col-3 text-center sticky-top">
       <!-- <div class="d-flex">
       <input type="text" class="form-control" required="true" minlength="2" placeholder="Search" name="search">
       <label for="search" class="visually-hidden">Search</label>  <button type="submit" class="btn btn-dark "><i class="mdi mdi-magnify fs-5"></i></button></div> -->
       <search-form />
       <br>
       <div>
-        <button @click="changePage(previousPage)" :disabled="!previousPage" class="btn btn-danger me-2"
+        <button @click="changePage(previousPage)" :disabled="!previousPage" class="btn btn-light me-2"
         :class="{'disabled' : !previousPage}">Old</button>
 
         <button @click="changePage(nextPage)" :disabled="!nextPage"
-        :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">New</button>
+        :class="`btn btn-light ${!nextPage ? 'btn-info' : ''}`">New</button>
         
 
       </div><br><br>
@@ -66,7 +66,8 @@ export default {
 
         async changePage(pageUrl) {
         try {
-        await postsService.getPosts(pageUrl)
+          await postsService.getPosts(pageUrl)
+          document.documentElement.scrollTop = 0
         } catch (error) {
         Pop.error(error.message)
         }
@@ -79,4 +80,8 @@ export default {
 
 
 <style lang="scss" scoped>
+.sidebar{
+  background-color: rgba(18, 2, 59, 0.858);
+  color:azure;
+}
 </style>

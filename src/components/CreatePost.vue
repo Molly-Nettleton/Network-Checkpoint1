@@ -5,11 +5,11 @@
 <h5>Create Post</h5>
   <div class="card text-start mb-3 d-flex elevation-5">
 
-  <div class="d-flex ps-4 pt-2">
+  <div class="d-flex ps-3 mt-2 pt-2">
     <!-- NOTE  -->
-        <div>
-          <img :src="user.picture" alt="">
-        </div>
+        
+          <img class="pic rounded" :src="user.picture" alt="">
+        
       </div>
 
 <div class="card-body">
@@ -57,9 +57,9 @@ export default {
     
       async handleSubmit() {
         try {
-          const formData = banana.value
+          const formData = editable.value
           await postsService.createPost(formData)
-          banana.value = {
+          editable.value = {
             post: {}
           }
         }
@@ -75,5 +75,8 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.pic{
+height: 50px;
+widows: 50px;
+}
 </style>

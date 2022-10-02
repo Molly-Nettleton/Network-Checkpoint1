@@ -2,11 +2,11 @@
   <div class="mb-3">
 <form @submit.prevent="handleSubmit">
 <div>
-  
-<h5>Create Post</h5>
-  <div class="card text-start mb-3 d-flex">
+  <div class="d-flex">
+<h5 class="p-2">Create Post</h5></div>
+  <div class="card text-start mb-2 d-flex">
 
-  <div class="d-flex ps-3 mt-2 pt-2">
+  <div class="d-flex ps-3">
     <!-- NOTE  -->
         
           <img class="pic rounded-circle" :src="user.picture" alt="">
@@ -15,7 +15,7 @@
 
 <div class="card-body">
   <div class="form-group">
-    <textarea class="form-control" placeholder="Post content here!" name="postcontent"
+    <textarea class="form-control" placeholder="Insert your musings." name="postcontent"
           v-model="editable.body"></textarea>
     </div>
         </div>

@@ -19,7 +19,7 @@
 
       </div>
       <br><br>
- <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Account', }">
+ <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Home', }">
       <div class="d-flex flex-column align-items-center">
         <img :src="account.picture" alt="" height="120" class="rounded">
         </div>
@@ -48,7 +48,7 @@
         </a> Resume<br></div>
 <br>
 <login/>
-
+<br>
     </div>
 
 
@@ -86,7 +86,9 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar{
-  background-color: rgba(18, 2, 59, 0.858);
+  background-color: rgba(21, 5, 61, 0.756);
   color:azure;
+  background-image: url(https://i.pinimg.com/originals/19/41/64/194164d700735e36890fcb0ae6282c17.gif);
+  // background-image: url(https://img1.picmix.com/output/stamp/normal/7/6/2/6/1566267_a5eb4.gif);
 }
 </style>

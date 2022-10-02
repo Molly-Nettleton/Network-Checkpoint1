@@ -6,7 +6,7 @@
 <div class="d-flex"><div class="pic">
         <User :creator="post.creator"/>
       </div>
-        <p class="p-2">{{post.creator.name}}</p>
+        <h5 class="p-2"><strong>{{post.creator.name}}</strong></h5>
         <div> 
           
           <span v-if="post.creator.graduated">
@@ -20,9 +20,9 @@
         <div class="card-body">
             <div class="d-flex justify-content-center">
               <span v-if="post.imgUrl">
-            <img class="img-fluid  rounded" :src="post.imgUrl" alt="Title">
-            </span> </div>
-          <p class="card-text pt-3 mx-4">{{post.body}}</p>
+            <img class="img" :src="post.imgUrl" alt="Title">
+            </span> </div><div class="pt-3 mx-4">
+          <p class="card-text p-2 button"><strong>{{post.body}}</strong></p></div>
         </div>
         
         <div class="card-footer d-flex justify-content-between"><span class="hello pt-2">{{post.createdAt}}</span>
@@ -103,5 +103,22 @@ height: 50px;
 width: 50px
 }
 
+.img{
+  max-height: 500px;
+  max-width: 550px;
+}
+
+.card{
+// background-color: rgba(29, 6, 88, 0.756);
+color: rgb(46, 20, 217);
+  background-image: url(https://img1.picmix.com/output/stamp/normal/7/6/2/6/1566267_a5eb4.gif);
+  //  background-attachment: fixed;
+  
+
+  .card-text{
+    background-color: rgba(240, 248, 255, 0.845);
+  }
+
+}
 
 </style>

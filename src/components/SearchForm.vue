@@ -6,7 +6,7 @@
 
       <form @submit.prevent="handleSubmit">
     <div class="input-group">
-      <input type="text" class="form-control" required="true" minlength="2" placeholder="Find a post .." name="search"
+      <input type="text" class="form-control" required="true" minlength="2" placeholder="Conjure Post" name="search"
         v-model="editable.term">
       <label for="search" class="visually-hidden">Search</label>
       <button type="submit" class="button"><i class="mdi mdi-magnify"></i></button>

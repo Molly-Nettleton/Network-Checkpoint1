@@ -1,5 +1,6 @@
 <template>
-<div class="text-center bg-dark px-3 rounded mb-3 mt-2 p-2"> <router-link class="navbar-brand" :to="{ name: 'Home' }">
+<div class="text-center px-3 mb-3 mt-2 p-2 banner"> 
+  <router-link class="navbar-brand" :to="{ name: 'Home' }" >
       <div class="text-center">
         <h1>SpellBook</h1>
       </div>
@@ -33,7 +34,11 @@
 import Login from './Login.vue'
 export default {
   setup() {
-    return {}
+    return {
+      // reloadPage() {
+      //   reload();
+      // }
+    }
   },
   components: { Login }
 }
@@ -52,5 +57,11 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.banner{
+border: lavender 5px;
+border-style: groove;
+background-color: rgb(255, 255, 255);
 }
 </style>

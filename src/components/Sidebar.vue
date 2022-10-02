@@ -6,14 +6,19 @@
       <search-form />
       <br>
       <div>
-        <button @click="changePage(previousPage)" :disabled="!previousPage" class="btn btn-light me-2"
+        <button @click="changePage(previousPage)" :disabled="!previousPage" class="button btn-light me-2"
         :class="{'disabled' : !previousPage}">Old</button>
 
+<router-link class="navbar-brand" :to="{ name: 'Home' }" >
+      <button class="button btn-light me-2">Home</button>
+    </router-link>
+
         <button @click="changePage(nextPage)" :disabled="!nextPage"
-        :class="`btn btn-light ${!nextPage ? 'btn-info' : ''}`">New</button>
+        :class="`button btn-light ${!nextPage ? 'btn-info' : ''}`">New</button>
         
 
-      </div><br><br>
+      </div>
+      <br><br>
  <router-link class="navbar-brand d-flex justify-content-center" :to="{ name: 'Account', }">
       <div class="d-flex flex-column align-items-center">
         <img :src="account.picture" alt="" height="120" class="rounded">

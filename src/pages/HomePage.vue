@@ -1,6 +1,6 @@
 <template>
 <div class="col-md-12">
-    <CreatePost v-if="user.isAuthenticated" />
+    <CreatePost v-if="user.isAuthenticated"/>
 
     <div class="" v-for="p in posts" :key="p">
         <PostCard :post="p" :account="p.creator"/>
@@ -34,7 +34,7 @@ export default {
         return {
             // accessing data
             posts: computed(() => AppState.posts),
-            user: computed(()=> AppState.account)
+            user: computed(()=> AppState.user)
         };
     },
     components: { PostCard }

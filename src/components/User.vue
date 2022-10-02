@@ -1,6 +1,6 @@
 <template>
     <router-link :to="{name: 'Profile', params: {id: creator.id}}">
-      <img :src="creator.picture" :alt="creator.name" :title="creator.name">
+      <img class="rounded-circle" :src="creator.picture" :alt="creator.name" :title="creator.name">
     </router-link>
 
 </template>

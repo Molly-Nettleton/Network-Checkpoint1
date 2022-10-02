@@ -1,5 +1,5 @@
 <template>
-  <div class="component" v-if="profile">
+  <div class="component text-center" v-if="profile">
 <ProfileDetail :profile="profile" />
   </div>
   <div class="" v-for="p in posts" :key="p">

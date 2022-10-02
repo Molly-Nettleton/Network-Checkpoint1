@@ -76,7 +76,7 @@
 
 
     <div class="rightside col-2">
-      <div class="text-center hello mb-3">Sponsored by:</div>
+      <div class="text-center hello mb-3 text-light">Sponsored by:</div>
       <div class="" v-for="l in lads">
       <lad-card :lad="l"/></div>
     </div>

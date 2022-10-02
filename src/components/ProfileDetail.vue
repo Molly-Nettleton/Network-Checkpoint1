@@ -1,9 +1,9 @@
 <template>
   <div class="cover-img text-shadow" :style="{backgroundImage: `url(${profile.coverImg})`}">
-    <img :src="profile.picture" alt="" height="200"  class="rounded profilepic">
+    <img :src="profile.picture" alt="profilepic" height="300"  class="profilepic m-3">
     <div class="my-3 mx-3">
 <h1>{{profile.name}} </h1>  
-      <div class="bio pb-2">
+      <div class="bio pb-2 m-5">
   {{profile.bio}}
     </div>
   </div>
@@ -35,13 +35,15 @@ export default {
     // background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    border: 3rem;
-    border-radius: 30%;
+    border: 5px solid;
+    border-radius: 50%;
   
   }
 
   .profilepic{
-    border-radius: 30%;
+    border-radius: 50%;
+    border: solid rgb(255, 255, 255)
+    
   }
   .bio{
     padding: 1rem;

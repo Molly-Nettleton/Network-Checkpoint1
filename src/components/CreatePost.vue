@@ -1,14 +1,15 @@
 <template>
+  <div class="mb-3">
 <form @submit.prevent="handleSubmit">
 <div>
   
 <h5>Create Post</h5>
-  <div class="card text-start mb-3 d-flex elevation-5">
+  <div class="card text-start mb-3 d-flex">
 
   <div class="d-flex ps-3 mt-2 pt-2">
     <!-- NOTE  -->
         
-          <img class="pic rounded" :src="user.picture" alt="">
+          <img class="pic rounded-circle" :src="user.picture" alt="">
         
       </div>
 
@@ -24,14 +25,14 @@
           <input type="url" name="imgurl" v-model="editable.imgUrl" class="rounded">
           </div>
       <div>
-      <button class="btn btn-success" type="submit">Make Post</button>
+      <button class="button" type="submit">Make Post</button>
     </div>
 
         </div>
   </div>
 </div>
 
-  </form>
+  </form></div>
 </template>
 
 
@@ -76,7 +77,12 @@ export default {
 
 <style lang="scss" scoped>
 .pic{
-height: 50px;
-widows: 50px;
+height: 70px;
+widows: 70px;
 }
+
+.card{
+  border: none;
+}
+
 </style>

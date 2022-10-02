@@ -3,7 +3,7 @@
 @import "./_overrides.scss";
 @import "./utilities.scss";
 @import "./loaders.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 body{
   overscroll-behavior: none;
 }
@@ -13,6 +13,7 @@ body{
   flex-direction: column;
   min-height: 100vh;
   background-color: $body-bg;
+  font-family: 'Tinos', serif;
 }
 
 main {
@@ -50,4 +51,19 @@ form:invalid button[type="submit"] {
   font-weight: bold;
   letter-spacing: 0.08rem
   /* Second Color  in text-shadow is the blur */
+}
+
+.button{
+border-color:white;
+border-style: outset;
+}
+
+form{
+border-color:white;
+border-style: groove;
+background-color: white;
+}
+
+.card{
+  border: none;
 }

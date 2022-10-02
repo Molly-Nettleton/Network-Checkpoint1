@@ -16,7 +16,7 @@
 <div class="card-body hi">
   <div class="form-group">
     <textarea class="button" rows="4" cols="65" placeholder="Insert your musings." name="postcontent"
-          v-model="editable.body"></textarea>
+          v-model="editable.body" required="true"></textarea>
     </div>
         </div>
         <div class="card-footer d-flex justify-content-between"> 

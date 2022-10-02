@@ -33,9 +33,9 @@
                   v-model="kiwi.graduated">
                 
               </div>
-      <div>
+      <div class="d-flex">
         <label for="bio">Bio:</label>
-        <textarea type="text" class="form-control" v-model="kiwi.bio" name="bio" rows="8"
+        <textarea type="text" class="" v-model="kiwi.bio" name="bio" cols="60" rows="8"
           style="resize:none"></textarea>
       </div>
       <div>

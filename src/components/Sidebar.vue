@@ -10,7 +10,7 @@
         <button @click="changePage(previousPage)" :disabled="!previousPage" class="button btn-light me-2"
         :class="{'disabled' : !previousPage}">Old</button>
 
-<router-link class="navbar-brand" :to="{ name: 'Home' }" >
+<router-link class="navbar-brand" :to="{ name: 'Home' }"  @click="reloadPage()">
       <button class="button btn-light me-2">Home</button>
     </router-link>
 
@@ -62,13 +62,25 @@ import Pop from "../utils/Pop.js"
 import SearchForm from './SearchForm.vue'
 
 export default {
-    setup() {
+  setup() {
+      async function getPosts() {
+            try {
+                await postsService.getPosts();
+            }
+            catch (error) {
+                console.error(error);
+                Pop.error(error);
+            }
+        }
         return {
           user: computed(() => AppState.user),
           account: computed(() => AppState.account),
           nextPage: computed(() => AppState.nextPage),
           previousPage: computed(() => AppState.previousPage),
-
+reloadPage() {
+  getPosts()
+        document.documentElement.scrollTop = 0
+      },
         async changePage(pageUrl) {
         try {
           await postsService.getPosts(pageUrl)

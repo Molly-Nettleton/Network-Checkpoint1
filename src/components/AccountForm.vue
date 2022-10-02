@@ -1,29 +1,30 @@
 <template>
- <form class="card account-form" @submit.prevent="handleSubmit">
+  <div class="button bg-light">
+ <form class="card account-form " @submit.prevent="handleSubmit">
     <div class="card-body text-start">
       <div>
         <label for="name">Name:</label>
-        <input type="text" class="form-control" v-model="kiwi.name" required name="name">
+        <input type="text" class="" v-model="kiwi.name" required name="name">
       </div>
       <div>
         <label for="picture">Picture:</label>
-        <input type="url" class="form-control" v-model="kiwi.picture" required name="picture" placeholder="picture">
+        <input type="url" class="" v-model="kiwi.picture" required name="picture" placeholder="picture">
       </div>
       <div>
         <label for="coverImg">Cover Image:</label>
-        <input type="url" class="form-control" v-model="kiwi.coverImg" required name="coverImg">
+        <input type="url" class="" v-model="kiwi.coverImg" required name="coverImg">
       </div>
       <div>
         <label for="coverImg">GitHub:</label>
-        <input type="url" class="form-control" v-model="kiwi.github" name="Github">
+        <input type="url" class="" v-model="kiwi.github" name="Github">
       </div>
       <div>
         <label for="coverImg">LinkedIn:</label>
-        <input type="url" class="form-control" v-model="kiwi.linkedin" name="linkedin">
+        <input type="url" class="" v-model="kiwi.linkedin" name="linkedin">
       </div>
 <div>
         <label for="coverImg">Resume:</label>
-        <input type="url" class="form-control" v-model="kiwi.resume" name="resume">
+        <input type="url" class="" v-model="kiwi.resume" name="resume">
       </div>
       <div><label class="form-check-label" for="flexCheckDefault">
                   Graduated:
@@ -38,10 +39,10 @@
           style="resize:none"></textarea>
       </div>
       <div>
-        <button type="submit" class="btn btn-primary w-100 mt-2">Save</button>
+        <button type="submit" class="button btn-primary w-100 mt-2">Save</button>
       </div>
     </div>
-  </form>
+  </form></div>
 </template>
 
 

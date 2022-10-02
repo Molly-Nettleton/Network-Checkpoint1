@@ -1,6 +1,6 @@
 <template>
 <div class="text-center px-3 mb-3 mt-2 p-2 banner "> 
-  <router-link class="navbar-brand" :to="{ name: 'Home' }" >
+  <router-link class="navbar-brand" :to="{ name: 'Home' }" @click="reloadPage()">
       <div class="text-center text-shadow d-flex justify-content-around">
        <img src="https://64.media.tumblr.com/d5ed4cb68efc45bd3f3739be61c17466/9df0a62931e573f3-65/s250x400/c4d71fcfbdf9c972d28351b694c4583b33c0ff3c.gifv" height="200" alt="">  <h1 class="mt-5">SpellBook</h1>
        <img src="https://64.media.tumblr.com/e5aa2fe3dbcf2276efa08b28348ece30/9df0a62931e573f3-2c/s250x400/e2cb27c1d88bf222497269b9446df427e2a868ed.gifv" height="200" alt="">
@@ -32,13 +32,24 @@
 </template>
 
 <script>
+import { postsService } from "../services/PostsService.js";
 import Login from './Login.vue'
+
 export default {
   setup() {
+    async function getPosts() {
+            try {
+                await postsService.getPosts();
+            }
+            catch (error) {
+                console.error(error);
+                Pop.error(error);
+            }
+        }
     return {
-      // reloadPage() {
-      //   reload();
-      // }
+      reloadPage() {
+        getPosts()
+      }
     }
   },
   components: { Login }

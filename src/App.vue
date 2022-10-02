@@ -26,7 +26,7 @@
     </div> -->
 <br><br>
 
-    <div class="post-content col-7">
+    <div class="post-content col-md-7 col-12">
       <Navbar />
       <!-- <h1 class="text-center mt-3 mb-5">Social Media Site</h1> -->
 
@@ -75,10 +75,12 @@
     </div>
 
 
-    <div class="rightside col-2">
+    <div class="rightside col-md-2 col-12">
+      <img src="http://image.blingee.com/images14/content/output/2007/9/24/248292362_ac93e8ca.gif?4" class="img-fluid mb-2" alt="">
       <div class="text-center hello mb-3 text-light">Sponsored by:</div>
       <div class="" v-for="l in lads">
       <lad-card :lad="l"/></div>
+      <img src="http://www.animationplayhouse.com/wizani2.gif" class="img-fluid" alt="">
     </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
 <template>
-  <div class="cover-img text-shadow mb-4" :style="{backgroundImage: `url(${profile.coverImg})`}">
+  <div class="cover-img  mb-4" :style="{backgroundImage: `url(${profile.coverImg})`}">
     <img :src="profile.picture" alt="profilepic" height="200"  class="profilepic m-3">
     <div class="my-3 mx-3">
-<h1 class="bio">{{profile.name}} </h1>  
-      <div class="bio pb-2 m-5">
+<h1 class="text-shadow">{{profile.name}} </h1>  
+      <div class="bio pb-2 m-5 p-2">
   {{profile.bio}}
     </div>
   </div>
@@ -35,7 +35,7 @@ export default {
     // background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    border: 5px solid;
+    border: white 5px solid;
     border-radius: 50%;
   
   }
@@ -47,6 +47,7 @@ export default {
   }
   .bio{
     overflow: hidden;
-    // background-color: rgba(101, 14, 152, 0.627);
+    color: rgb(46, 20, 217);
+    background-color: rgba(240, 238, 242, 0.76);
   }
 </style>

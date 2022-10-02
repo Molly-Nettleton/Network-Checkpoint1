@@ -1,8 +1,9 @@
 <template>
-  <div class="component">
-<div class="card text-start mb-3 d-flex elevation-5">
-
-        <div class="d-flex ps-4 pt-4 justify-content-between topbar">
+  <div class="component ">
+    
+<div class="card  text-start mb-3 d-flex elevation-5">
+<div class="brdr">
+        <div class=" d-flex ps-4 pt-4 justify-content-between topbar">
 <div class="d-flex"><div class="pic">
         <User :creator="post.creator"/>
       </div>
@@ -10,7 +11,7 @@
         <div> 
           
           <span v-if="post.creator.graduated">
-          <i class="mdi mdi-account-school-outline fs-5" title="Graduate"></i> 
+          <i class="mdi mdi-wizard-hat fs-5" title="Graduate"></i> 
         </span>
         </div>
 </div>
@@ -28,10 +29,10 @@
         <div class="card-footer d-flex justify-content-between"><span class="hello pt-2">{{post.createdAt}}</span>
           <span>{{post.likes.length}}
             <button class="btn selectable" :disabled="!user.isAuthenticated">
-            <i class="mdi mdi-heart fs-4" @click="likePost()" title="Like Post"></i>
+            <i class="mdi mdi-heart fs-5 text-info" @click="likePost()" title="Like Post"></i>
             </button>
           </span></div>
-      </div>
+      </div></div>
 
   </div>
 </template>
@@ -118,6 +119,11 @@ color: rgb(46, 20, 217);
   .card-text{
     background-color: rgba(240, 248, 255, 0.845);
   }
+
+  .brdr{
+border:white 5px;
+border-style: groove;
+}
 
 }
 

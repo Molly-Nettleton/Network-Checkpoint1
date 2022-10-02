@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .banner{
-border: lavender 5px;
+border: rgb(174, 142, 224) 5px;
 border-style: groove;
 background-color: rgb(255, 255, 255);
 }

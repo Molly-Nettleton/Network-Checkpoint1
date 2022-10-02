@@ -25,6 +25,13 @@
         <label for="coverImg">Resume:</label>
         <input type="url" class="form-control" v-model="kiwi.resume" name="resume">
       </div>
+      <div><label class="form-check-label" for="flexCheckDefault">
+                  Graduated:
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                  v-model="kiwi.graduated">
+                
+              </div>
       <div>
         <label for="bio">Bio:</label>
         <textarea type="text" class="form-control" v-model="kiwi.bio" name="bio" rows="8"

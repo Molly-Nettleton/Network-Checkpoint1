@@ -107,7 +107,6 @@ reloadPage() {
 
 <style lang="scss" scoped>
 .sidebar{
-
   
   background-color: rgba(21, 5, 61, 0.756);
   color:azure;
@@ -119,8 +118,6 @@ reloadPage() {
 .hoverable{
   cursor: pointer;
 }
-
-
 @media (max-height: 550px){
   .sidebar{
     position: static;

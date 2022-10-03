@@ -128,7 +128,7 @@ async function getLads(){
 
 
 .sidebar{
-  height: 60rem;
+  height: 40rem;
   padding-top: 1rem;
   padding-left: 4rem;
   padding-right: 4rem;

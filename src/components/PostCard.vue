@@ -26,7 +26,7 @@
           <p class="card-text p-2 button"><strong>{{post.body}}</strong></p></div>
         </div>
         
-        <div class="card-footer d-flex justify-content-between"><span class="hello pt-2">{{post.createdAt}}</span>
+        <div class="card-footer d-flex justify-content-between "><span class="hello pt-2">{{post.createdAt}}</span>
           <span>{{post.likes.length}}
             <button class="btn selectable" :disabled="!user.isAuthenticated">
             <i class="mdi mdi-heart fs-5 text-info" @click="likePost()" title="Like Post"></i>

@@ -64,7 +64,7 @@ import SearchForm from './SearchForm.vue'
 export default {
   setup() {
     const router= useRouter()
-      async function getPosts() {
+    async function getPosts() {
             try {
                 await postsService.getPosts();
             }
@@ -87,8 +87,8 @@ export default {
           account: computed(() => AppState.account),
           nextPage: computed(() => AppState.nextPage),
           previousPage: computed(() => AppState.previousPage),
-reloadPage() {
-  getPosts()
+   reloadPage() {
+        getPosts()
         document.documentElement.scrollTop = 0
       },
         async changePage(pageUrl) {

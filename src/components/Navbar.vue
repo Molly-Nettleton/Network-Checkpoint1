@@ -72,7 +72,7 @@ a:hover {
 }
 
 .banner{
-  background-color: rgba(21, 5, 61, 0.356);
+  background-color: rgba(21, 5, 61, 0.536);
 border: rgb(168, 79, 242) 4px;
 border-style: groove;
 /* background-color: rgb(145, 104, 174); */

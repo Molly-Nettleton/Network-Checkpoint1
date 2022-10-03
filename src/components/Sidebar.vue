@@ -7,15 +7,15 @@
       <search-form />
       <br>
       <div>
-        <button @click="changePage(previousPage)" :disabled="!previousPage" class="button btn-light me-2"
-        :class="{'disabled' : !previousPage}">Old</button>
+        <button @click="changePage(previousPage)" :disabled="!previousPage"  class="button btn-light me-2"
+      >Newer</button>
 
 <router-link class="navbar-brand" :to="{ name: 'Home' }"  @click="reloadPage()">
       <button class="button btn-light me-2">Home</button>
     </router-link>
 
-        <button @click="changePage(nextPage)" :disabled="!nextPage"
-        :class="`button btn-light ${!nextPage ? 'btn-info' : ''}`">New</button>
+        <button class="button" @click="changePage(nextPage)" :disabled="!nextPage"
+        >Older</button>
         
 
       </div><br>
@@ -77,7 +77,8 @@ export default {
 
       async gotoProfilePage() {
         try {
-          await router.push({name:'Profile',params:{id: this.account.id}})
+          await router.push({ name: 'Profile', params: { id: this.account.id } })
+          window.location.reload()
         } catch (error) {
           
         }
@@ -107,7 +108,7 @@ reloadPage() {
 
 <style lang="scss" scoped>
 .sidebar{
-  
+
   background-color: rgba(21, 5, 61, 0.756);
   color:azure;
   background-image: url(https://img1.picmix.com/output/stamp/normal/6/0/1/6/1556106_f227e.gif);

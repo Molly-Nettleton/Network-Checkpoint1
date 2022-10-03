@@ -5,11 +5,13 @@ import { PostPageApi, SandboxApi } from "./AxiosService.js"
 class PostsService {
 
   async getPosts(pageUrl = '') {
+    AppState.nextPage = {}
+  AppState.previousPage = {}
     const res = await PostPageApi.get(pageUrl)
     console.log(res.data);
     AppState.posts = res.data.posts.map(p => new Post(p))
-    AppState.nextPage = res.data.newer
-    AppState.previousPage = res.data.older
+    AppState.nextPage = res.data.older
+    AppState.previousPage = res.data.newer
   }
 
   async createPost(formData) {
@@ -25,6 +27,8 @@ class PostsService {
       })
     
     AppState.posts = res.data.posts.map(p => new Post(p))
+     AppState.nextPage = res.data.older
+    AppState.previousPage = res.data.newer
   }
 
   async getPostsBySearchTerm(term, page = 1) {

@@ -21,7 +21,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-center">
               <span v-if="post.imgUrl">
-            <img class="img" :src="post.imgUrl" alt="Title">
+            <img class="img img-fluid" :src="post.imgUrl" alt="Title">
             </span> </div><div class="pt-3 mx-4">
           <p class="card-text p-2 button"><strong>{{post.body}}</strong></p></div>
         </div>
@@ -105,8 +105,8 @@ width: 50px
 }
 
 .img{
-  max-height: 500px;
-  max-width: 550px;
+ width: auto;
+  object-fit: cover;
 }
 
 .card{

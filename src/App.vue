@@ -76,7 +76,7 @@
 
 
     <div class="rightside col-md-2 col-12">
-      <img src="http://image.blingee.com/images14/content/output/2007/9/24/248292362_ac93e8ca.gif?4" class="img-fluid mb-2" alt="">
+      <img src="http://image.blingee.com/images14/content/output/2007/9/24/248292362_ac93e8ca.gif?4" class="img-fluid mb-2 button" alt="">
       <div class="text-center hello mb-3 text-light">Sponsored by:</div>
       <div class="" v-for="l in lads">
       <lad-card :lad="l"/></div>

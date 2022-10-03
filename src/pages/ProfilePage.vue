@@ -1,6 +1,7 @@
 <template>
   <div class="component text-center" v-if="profile">
 <ProfileDetail :profile="profile" />
+<br>
   </div>
   <div class="" v-for="p in posts" :key="p">
         <PostCard :post="p" :account="p.creator"/></div>

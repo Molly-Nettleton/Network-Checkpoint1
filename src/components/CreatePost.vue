@@ -15,7 +15,7 @@
 
 <div class="card-body hi">
   <div class="form-group">
-    <textarea class="button" rows="4" cols="65" placeholder="Insert your musings." name="postcontent"
+    <textarea  rows="4" cols="35" placeholder="Insert your musings." name="postcontent"
           v-model="editable.body" required="true"></textarea>
     </div>
         </div>

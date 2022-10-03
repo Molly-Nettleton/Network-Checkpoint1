@@ -31,6 +31,7 @@ export default {
         try {
           await postsService.getPostsBySearchTerm(editable.value.term)
           document.documentElement.scrollTop = 0
+          editable.value = {}
           } catch (error) {
             console.error('[SearchPost]',error)
             Pop.error(error)
